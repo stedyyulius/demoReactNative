@@ -1,58 +1,73 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
+import axios from 'axios';
 import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
+  ScrollView,
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
 export default class App extends Component<Props> {
+  constructor(props) {
+    super(props)
+    this.state={
+      cards: []
+    }
+  }
+  componentDidMount() {
+    axios.get('https://omgvamp-hearthstone-v1.p.mashape.com/cards',{
+      headers: {
+        'X-Mashape-Key': 'H5m7TWh7somshXTc5fovt1JS3EFjp1xybJ9jsn5CIjEPnajN1a',
+      }
+    })
+    .then(res=> {
+      this.setState({
+        cards: res.data.Basic.slice(15,50)
+      })
+    })
+    .catch(err=>{
+      alert(err)
+    })
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Nativess!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+      <ScrollView style={styles.container}>
+        <View style={styles.cardRow}>
+        {(this.state.cards.length !== 0)
+          ? this.state.cards.map((c,i)=>
+              <View key={i}>
+                <Image
+                style={styles.image}
+                source={{uri: c.imgGold || 'https://www.sxsunlimited.com/wp-content/uploads/2017/02/st4Sp6Aw.jpg'}} />
+              </View>
+            )
+          : <Text>Loading...</Text>
+        }
+        </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    padding: 20,
+  },
+  loading: {
+    fontSize: 30,
+    textAlign: 'center',
+  },
+  cardRow: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+  image: {
+    width: 150,
+    height: 150,
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
