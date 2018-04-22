@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from 'axios'
+import style from './Style'
 import {
   Platform,
   StyleSheet,
   Text,
   View,
   Image,
-  ScrollView,
+  ScrollView
 } from 'react-native';
+
+const api = 'https://omgvamp-hearthstone-v1.p.mashape.com/cards'
 
 export default class App extends Component<Props> {
   constructor(props) {
@@ -17,7 +20,7 @@ export default class App extends Component<Props> {
     }
   }
   componentDidMount() {
-    axios.get('https://omgvamp-hearthstone-v1.p.mashape.com/cards',{
+    axios.get(api,{
       headers: {
         'X-Mashape-Key': 'H5m7TWh7somshXTc5fovt1JS3EFjp1xybJ9jsn5CIjEPnajN1a',
       }
@@ -35,15 +38,13 @@ export default class App extends Component<Props> {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.cardRow}>
-        {(this.state.cards.length !== 0)
-          ? this.state.cards.map((c,i)=>
-              <View key={i}>
-                <Image
-                style={styles.image}
-                source={{uri: c.imgGold || 'https://www.sxsunlimited.com/wp-content/uploads/2017/02/st4Sp6Aw.jpg'}} />
-              </View>
-            )
-          : <Text>Loading...</Text>
+        {(this.state.cards.length === 0)
+          ? <Text style={styles.textStyle}>Loading...</Text>
+          : (this.state.cards.map((c,i)=>
+                <View key={i}>
+                  <Image style={styles.image} source={{uri:c.img || 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/600px-No_image_available_600_x_450.svg.png'}} />
+                </View>
+              ))
         }
         </View>
       </ScrollView>
@@ -51,23 +52,4 @@ export default class App extends Component<Props> {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-  },
-  loading: {
-    fontSize: 30,
-    textAlign: 'center',
-  },
-  cardRow: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center'
-  },
-  image: {
-    width: 150,
-    height: 150,
-    margin: 10,
-  }
-});
+const styles = StyleSheet.create(style);
