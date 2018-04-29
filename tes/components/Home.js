@@ -27,7 +27,7 @@ class Home extends Component {
           onPress={() =>
             navigate('Profile')
           }>
-            <Text>ini icon</Text>
+            <Text>ke profile</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuIcon}>
             <Text>ini icon</Text>
