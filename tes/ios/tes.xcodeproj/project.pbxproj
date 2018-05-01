@@ -51,7 +51,6 @@
 		DCDFB4E485F74B1B9CA1AFAC /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8704816D544D188DEFD4CE /* Octicons.ttf */; };
 		C125B8A7397347A886B360C5 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B04323C52161423ABA087CD7 /* SimpleLineIcons.ttf */; };
 		7FA44E4004794F37AB417AB6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92C2808C9C504F5A827AA1BB /* Zocial.ttf */; };
-		75A4571DAABE486E87E25B9C /* libRNOcrLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF31DE9DD1F442F861CB762 /* libRNOcrLib.a */; };
 		6F47A6013DE54E2BB7646AEE /* libVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B6B419EBD34BBB8F37FFA2 /* libVoice.a */; };
 /* End PBXBuildFile section */
 
@@ -375,8 +374,6 @@
 		AC8704816D544D188DEFD4CE /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B04323C52161423ABA087CD7 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		92C2808C9C504F5A827AA1BB /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9FADF3B6704C45EDB05364B2 /* RNOcrLib.xcodeproj */ = {isa = PBXFileReference; name = "RNOcrLib.xcodeproj"; path = "../node_modules/react-native-ocr-lib/ios/RNOcrLib.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		6CF31DE9DD1F442F861CB762 /* libRNOcrLib.a */ = {isa = PBXFileReference; name = "libRNOcrLib.a"; path = "libRNOcrLib.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		631FD41E4A7D416099A575E6 /* Voice.xcodeproj */ = {isa = PBXFileReference; name = "Voice.xcodeproj"; path = "../node_modules/react-native-voice/ios/Voice.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		82B6B419EBD34BBB8F37FFA2 /* libVoice.a */ = {isa = PBXFileReference; name = "libVoice.a"; path = "libVoice.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
@@ -410,7 +407,6 @@
 				D128428715E14AF1991126D5 /* libRNTesseractOcr.a in Frameworks */,
 				B92B28E7884B42D187FFCFAE /* libRNImagePicker.a in Frameworks */,
 				C29145707F1841F9A4D33840 /* libRNVectorIcons.a in Frameworks */,
-				75A4571DAABE486E87E25B9C /* libRNOcrLib.a in Frameworks */,
 				6F47A6013DE54E2BB7646AEE /* libVoice.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,7 +597,6 @@
 				7D426AA4BFEC4694BA6557B1 /* RNTesseractOcr.xcodeproj */,
 				92CA52627FBB4A7FA7C525DB /* RNImagePicker.xcodeproj */,
 				CDC38EFF6BEF4734890BA864 /* RNVectorIcons.xcodeproj */,
-				9FADF3B6704C45EDB05364B2 /* RNOcrLib.xcodeproj */,
 				631FD41E4A7D416099A575E6 /* Voice.xcodeproj */,
 			);
 			name = Libraries;
@@ -1260,18 +1255,12 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tes.app/tes";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-tesseract-ocr/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ocr-lib/ios",
 					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 			};
@@ -1293,18 +1282,12 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tes.app/tes";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-tesseract-ocr/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ocr-lib/ios",
 					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 			};
@@ -1330,7 +1313,6 @@
 					"$(SRCROOT)/../node_modules/react-native-tesseract-ocr/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ocr-lib/ios",
 					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 			};
@@ -1355,7 +1337,6 @@
 					"$(SRCROOT)/../node_modules/react-native-tesseract-ocr/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ocr-lib/ios",
 					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 			};
@@ -1386,18 +1367,12 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-tesseract-ocr/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ocr-lib/ios",
 					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 			};
@@ -1428,18 +1403,12 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-tesseract-ocr/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ocr-lib/ios",
 					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 			};
@@ -1469,18 +1438,12 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-tesseract-ocr/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ocr-lib/ios",
 					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 			};
@@ -1510,18 +1473,12 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-tesseract-ocr/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ocr-lib/ios",
 					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 			};

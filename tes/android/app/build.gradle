@@ -151,7 +151,6 @@ android {
 
 dependencies {
     compile project(':react-native-voice')
-    compile project(':react-native-ocr-lib')
     compile project(':react-native-image-picker')
     compile project(':react-native-tesseract-ocr')
     compile fileTree(dir: "libs", include: ["*.jar"])

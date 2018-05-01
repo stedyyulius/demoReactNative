@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.wenkesj.voice.VoicePackage;
-import com.reactlibrary.RNOcrLibPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.reactlibrary.RNTesseractOcrPackage;
 import com.facebook.react.ReactNativeHost;
@@ -29,7 +28,6 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new VoicePackage(),
-            new RNOcrLibPackage(),
           new ImagePickerPackage(),
           new RNTesseractOcrPackage(),
           new VectorIconsPackage()

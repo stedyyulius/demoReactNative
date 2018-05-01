@@ -7,6 +7,7 @@ import {
   Image,
   AppRegistry,
   TouchableHighlight,
+  Button,
 } from 'react-native';
 
 class SpeechToText extends Component {
@@ -21,7 +22,6 @@ class SpeechToText extends Component {
       results: [],
       partialResults: [],
     };
-    Voice.onSpeechStart = this.onSpeechStart.bind(this);
     Voice.onSpeechRecognized = this.onSpeechRecognized.bind(this);
     Voice.onSpeechEnd = this.onSpeechEnd.bind(this);
     Voice.onSpeechError = this.onSpeechError.bind(this);
@@ -59,6 +59,9 @@ class SpeechToText extends Component {
   }
 
   onSpeechResults(e) {
+    if (e.value[e.value.length - 1].toLowerCase() === 'say hello') {
+      alert('hello stedy handsome')
+    }
     this.setState({
       results: e.value,
     });
@@ -76,7 +79,7 @@ class SpeechToText extends Component {
     });
   }
 
-  async _startRecognizing(e) {
+  async _startRecognizing() {
     this.setState({
       recognized: '',
       pitch: '',
@@ -88,8 +91,8 @@ class SpeechToText extends Component {
     });
     try {
       await Voice.start('en-US');
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(err);
     }
   }
 
@@ -181,12 +184,7 @@ class SpeechToText extends Component {
           style={styles.stat}>
           {`End: ${this.state.end}`}
         </Text>
-        <TouchableHighlight onPress={this._startRecognizing.bind(this)}>
-          <Image
-            style={styles.button}
-            source={require('./button.png')}
-          />
-        </TouchableHighlight>
+          <Button color="black" title="Start Recording" onPress={() => this._startRecognizing()} />
         <TouchableHighlight onPress={this._stopRecognizing.bind(this)}>
           <Text
             style={styles.action}>
