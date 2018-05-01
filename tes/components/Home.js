@@ -19,14 +19,15 @@ class Home extends Component {
     this.state={}
   }
   render() {
-    const { navigate } = this.props.navigation;
+    // const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.menuIconRow}>
           <TouchableOpacity style={styles.menuIcon}
-          onPress={() =>
-            navigate('Profile')
-          }>
+          // onPress={() =>
+          //   navigate('Profile')
+          // }
+          >
             <Text>ke profile</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuIcon}>

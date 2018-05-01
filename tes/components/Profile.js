@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import RNTesseractOcr from 'react-native-tesseract-ocr';
 import {
   Platform,
   StyleSheet,
@@ -7,17 +8,23 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  TextInput,
+  Button
 } from 'react-native';
 
 import style from '../Style'
 
 const styles = StyleSheet.create(style);
 
-class Home extends Component {
+class Profile extends Component {
   constructor(props){
     super(props)
-    this.state={}
+    this.state={
+      image: '',
+      ocrResult: ''
+    }
   }
+
   render() {
     return (
       <View style={styles.container}>
@@ -27,4 +34,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Profile
