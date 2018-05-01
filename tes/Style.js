@@ -7,7 +7,11 @@ const style = {
   },
   cardRow: {
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+  },
+  loading: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   textStyle: {
     fontSize: 50,

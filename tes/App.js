@@ -56,11 +56,11 @@ export default class App extends Component<Props> {
           <OCR />
         </TabNavigator.Item>
         <TabNavigator.Item
-          selected={this.state.selectedTab === 'ocr'}
+          selected={this.state.selectedTab === 'SpeechToText'}
           title="SpeechToText"
           renderIcon={() => <Icon name="microphone" size={20} color="black" />}
           renderSelectedIcon={() => <Icon name="microphone" size={20} color="black" />}
-          onPress={() => this.setState({ selectedTab: 'ocr' })}>
+          onPress={() => this.setState({ selectedTab: 'SpeechToText' })}>
           <SpeechToText />
         </TabNavigator.Item>
       </TabNavigator>
