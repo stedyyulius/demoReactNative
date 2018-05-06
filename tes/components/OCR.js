@@ -32,8 +32,8 @@ const options = {
     skipBackup: true,
     path: 'images'
   },
-  maxWidth: 2250,
-  maxHeight: 2250,
+  maxWidth: 2050,
+  maxHeight: 2050,
 };
 
 class OCR extends Component {
@@ -47,7 +47,6 @@ class OCR extends Component {
 
   upload(){
     ImagePicker.showImagePicker(options, (response) => {
-      let source = { uri: response.uri, isStatic: true }
       this.setState({ image: response.uri }, this.readImage(response.path));
     });
   }
@@ -71,10 +70,6 @@ class OCR extends Component {
             onPress={()=> this.upload()}
             title="Upload"
             color="black"
-          />
-          <ActivityIndicator
-            animating={true}
-            size="large"
           />
           <Text>{this.state.ocrResult}</Text>
         </View>

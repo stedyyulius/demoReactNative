@@ -22,12 +22,6 @@ class SpeechToText extends Component {
       results: [],
       partialResults: [],
     };
-    Voice.onSpeechRecognized = this.onSpeechRecognized.bind(this);
-    Voice.onSpeechEnd = this.onSpeechEnd.bind(this);
-    Voice.onSpeechError = this.onSpeechError.bind(this);
-    Voice.onSpeechResults = this.onSpeechResults.bind(this);
-    Voice.onSpeechPartialResults = this.onSpeechPartialResults.bind(this);
-    Voice.onSpeechVolumeChanged = this.onSpeechVolumeChanged.bind(this);
   }
 
   componentWillUnmount() {
@@ -184,20 +178,24 @@ class SpeechToText extends Component {
           style={styles.stat}>
           {`End: ${this.state.end}`}
         </Text>
-          <Button color="black" title="Start Recording" onPress={() => this._startRecognizing()} />
-        <TouchableHighlight onPress={this._stopRecognizing.bind(this)}>
+          <Button
+          color="black"
+          title="Start Recording"
+          onPress={() => this._startRecognizing()} 
+          />
+        <TouchableHighlight onPress={() => this._stopRecognizing()}>
           <Text
             style={styles.action}>
             Stop Recognizing
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight onPress={this._cancelRecognizing.bind(this)}>
+        <TouchableHighlight onPress={() => this._cancelRecognizing()}>
           <Text
             style={styles.action}>
             Cancel
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight onPress={this._destroyRecognizer.bind(this)}>
+        <TouchableHighlight onPress={() => this._destroyRecognizer()}>
           <Text
             style={styles.action}>
             Destroy
